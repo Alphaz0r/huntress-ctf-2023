@@ -52,4 +52,4 @@ So basically what we need to do there is:
 3. Base64 Decode all the String 
 4. Gzip decompression
 
-The output should be more code but this time we can see the flag url-encoded. One last step and it is done!
+The output should be more code but this time we can see the flag url-encoded. After url-decoding the flag we made it!
