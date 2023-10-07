@@ -18,7 +18,7 @@ PORT     STATE SERVICE
 
 If we try SSH we get a message this is out of the challenge... M'kay! 
 
-Port 8888 seems interesting but we cannot browse to it.
+Port 8888 seems interesting but we cannot browse to it. Either it throws an error or simply just hangs
 
 Let's try with netcat
 
