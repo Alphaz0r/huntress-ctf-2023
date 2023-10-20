@@ -62,7 +62,7 @@ invoke-e'+'XpRessI'+'on(((' ( n'+'EW-ObjeCt '+' '+'+''SYsT'+'em.IO.c'+'omPre'+'S
 
 Every step takes us to a more readable code! Let's continue.
 
-A lot of string concatenation is in place here. Let's remove²    `'+'`.
+A lot of string concatenation is in place here. Let's remove `'+'`.
 
 ## Output
 
@@ -84,8 +84,7 @@ $string -CRePlacE('lwk',"$")  -CRePlacE (("Y0b"),"'")  -RePLACe('IKf',"|")
 
 ## Output
 
-```ps
-0.(('. ( $ENv:CoMSpEc[4,24,25]-join'')( " $(
+```0.(('. ( $ENv:CoMSpEc[4,24,25]-join'')( " $(
 Set-variable 'OfS' '')"+ ( [String] [regex]::matches( " ))
 
 
