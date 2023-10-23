@@ -11,7 +11,7 @@ A file is included with this challenge
 Let's download the file.
 
 
-Using this command I got the info that the file is a [GIMP](https://www.gimp.org/) image. 
+Using `file` command on my Kali machine I got the info that the file is a [GIMP](https://www.gimp.org/) image. 
 
 Opening the image with the tool, I've got an hint in the challenge name + the context that we have to check the different layers of the image to find something...
 
