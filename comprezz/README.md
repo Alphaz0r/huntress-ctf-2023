@@ -12,6 +12,8 @@ Let's download the file.
 
 We see that comprezz archive is... Obviously, a compressed file but I cannot extract directly. Using uncompress I see that a suffix is missing...
 
-The challenge context gives us a hint that S were replaced by Z, maybe let's rename the file with `.z` suffix ?
+The challenge context gives us a hint that S were replaced by Z, I thought of Linux compressed file. (A Z file is compressed UNIX file used to archive files and save space.) maybe let's rename the file with `.z` suffix ?
+
+
 
 ![Alt text](image.png)
