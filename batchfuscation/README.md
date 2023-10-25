@@ -1,14 +1,138 @@
+# Batchfuscation
+# I was reading a report on past Trickbot malware, and I found this sample that looks a lot like their code! Can you make any sense of it?
+
+A file is included with the challenge
+
+---
+
+Let's download the file!
+
+I won't show it here because it's very very long, but you can find it in this directory.
+
+We know it's a batch file. Let's make a small analysis.
+
+# File analysis
+
+> TL;DR Every single character is placed in a variable and they just wrote the code with a succession of variables.
+
+`Line 2 -> 224` are just variable, after deobfuscating them all I could create a little python dictonnary I could use to write a little python script to deobfuscate the file.
+
+
+```py
+
+# Dictionnary
+variables_dict = {
+    'kquqjy' : 't',
+    'zvipzis' : 'i',
+    'uqcqswo' : 'x',
+    'ltevposie' : 'e',
+    'kmgnxdhqb' : ' ',
+    'naikpbo' : 'd',
+    'wzirk' : 'm',
+    'rbiky' : 'c',
+    'jeuudks' : 'a',
+    'xeegh' : '/',
+    'mbbzmk' : '=',
+    'grfxdh' : ' ',
+    'bdevq' : 'set',
+    'grtoy': 'a',
+    'kbhoesxh': 'b',
+    'fxflckau': 'c',
+    'pxesvvz': 'd',
+    'aeawgno': 'e',
+    'vdqvoyxss': 'f',
+    'mljmage': 'g',
+    'dtqahrd': 'h',
+    'xrghxw': 'i',
+    'rvrcd': 'j',
+    'cxqemy': 'k',
+    'djkxbuskp': 'l',
+    'auuhztfa': 'm',
+    'znvbyce': 'n',
+    'exoypdqzg': 'o',
+    'upogfi': 'p',
+    'xulqq': 'q',
+    'jxiczrrc': 'r',
+    'qihgjzq': 's',
+    'ldawonn': 't',
+    'edefpb': 'u',
+    'giknplvpv': 'v',
+    'fbvra': 'w',
+    'klerqtt': 'x',
+    'puufauef': 'y',
+    'lhuzd': 'z',
+    'iwwna': 'A',
+    'ilajhm': 'B',
+    'hzsouxmm': 'C',
+    'dqutqsgb': 'D',
+    'jkkvc': 'E',
+    'ioexkmd': 'F',
+    'jmcpbpld': 'G',
+    'udpmq': 'H',
+    'rbijdi': 'I',
+    'qzpkv': 'J',
+    'ikedxdamk': 'K',
+    'stcjm': 'L',
+    'majmn': 'M',
+    'utjscfnmq': 'N',
+    'bpxroxnqg': 'O',
+    'hrleb': 'P',
+    'wzprdlp': 'Q',
+    'fikmapqe': 'R',
+    'lwuwiovpd': 'S',
+    'lftuiqz': 'T',
+    'vogsuisdx': 'U',
+    'bsslmcgic': 'V',
+    'oyyfmilg': 'W',
+    'lhniwqwff': 'X',
+    'nvfosjl': 'Y',
+    'ajexk': 'Z',
+    'flopojsse': '0',
+    'tqjmbt': '1',
+    'wpwjwymw': '2',
+    'wxkugd': '3',
+    'fxqik': '4',
+    'zygcfg': '5',
+    'remydays': '6',
+    'ztvra': '7',
+    'yqdie': '8',
+    'lzyqwgi': '9',
+    'koimdqluu': '{',
+    'tleci': '}',
+    'vgysuv': '+',
+    'xpjaysvii': ':',
+    'nvsna': '*',
+    'vrzatob': '=',
+    'orutn': '.',
+    'hmjhafbu': '_'
+}
+
+# Get batchfuscation file content
+with open('./batchfuscation' , 'r') as file:
+    string = file.read()
+
+
+# Find / replace
+for var, charac in variables_dict.items():
+    var='%'+var+'%'
+    string = string.replace(var, charac)
+    
+# Write output to another file
+with open('./batchfusaction_deobf', 'w') as output:
+    output.write(string)
+
+print("Glory to snek")
+```
+
+Once the file has been deobfuscated, I see that most of the lines are just beginning with `rem` which means the line is ignored by the program.
+
+Searching for "flag" inside the file I could find interesting lines.
+
+`:: set flag_character34=d`
+
+After getting them all I had to replace every character in order and got the flag.
+
 flag{acad67e3d0b5bf31ac6639360db9d19a}
 
 
-
-$string = "insert whole code"
-
-
-$string2 = $string -replace("%bdevq%", "set") -replace("%grfxdh%", "  ") -replace("%mbbzmk%", "=") -replace("%xeegh%", "/") -replace("%jeuudks%", "a") -replace("%rbiky%", "c") -replace("%wzirk%", "m") -replace("%naikpbo%", "d") -replace("%ltevposie%", "e") -replace("%uqcqswo%", "x") -replace("%zvipzis%", "i") -replace("%kquqjy%", "t") -replace("%kmgnxdhqb%", " ") -replace("%bpquuu%", "a") -replace("%grtoy%", "a") -replace("%kbhoesxh%", "b") -replace("%fxflckau%", "c") -replace("%pxesvvz%", "d") -replace("%aeawgno%", "e") -replace("%vdqvoyxss%", "f") -replace("%mljmage%", "g") -replace("%dtqahrd%", "h") -replace("%xrghxw%", "i") -replace("%rvrcd%", "j") -replace("%cxqemy%", "k") -replace("%djkxbuskp%", "l") -replace("%auuhztfa%", "m") -replace("%znvbyce%", "n") -replace("%exoypdqzg%", "o") -replace("%upogfi%", "p") -replace("%xulqq%", "q") -replace("%jxiczrrc%", "r") -replace("%qihgjzq%", "s") -replace("%ldawonn%", "t") -replace("%edefpb%", "u") -replace("%giknplvpv%", "v") -replace("%fbvra%", "w") -replace("%klerqtt%", "x") -replace("%puufauef%", "y") -replace("%lhuzd%", "z") -replace("%ajexk%", "Z") -replace("%flopojsse%", "0") -replace("%tqjmbt%", "1") -replace("%wpwjwymw%", "2") -replace("%wxkugd%", "3") -replace("%fxqik%", "4") -replace("%zygcfg%", "5") -replace("%remydays%", "6") -replace("%ztvra%", "7") -replace("%yqdie%", "8") -replace("%lzyqwgi%", "9") -replace("%koimdqluu%", '{') -replace("%tleci%", "}") -replace("%vgysuv%", "+") -replace("%xpjaysvii%", "-") -replace("%nvsna%", "*") -replace("%vrzatob%", "/") -replace("%orutn%", ".") -replace("%hmjhafbu%", "_") 
-
-PS C:\Users\takal> echo $string2 > ahah.txt
-
-
--- set flag_character20/3
 
