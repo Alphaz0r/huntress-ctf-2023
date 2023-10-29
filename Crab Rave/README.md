@@ -12,7 +12,7 @@ Two files are included with this challenge
 
 # File analysis
 
-After decompiling, I found 2 files. 
+After unzipping, I found 2 files. 
 
 ![Alt text](image.png)
 
