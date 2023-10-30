@@ -14,17 +14,17 @@ As we extract we see a lot of files coming up, as the challenge context suggest 
 
 First I compared the very first file with the second with `diff` tool on my Kali machine. I noticed just one line is different.
 
-> TODO: Add screenshot or smth
+![Alt text](image.png)
 
 To be sure I compared the second file and the third one again with `diff`. Same result, one line is different. I assumed this was the same for all the files.
 
 Then I used this bash command to gather all these lines:
 
-`cat * | grep 'TODO'`
+`cat * | grep "String.Equals(pass"`
 
 After I checked a bit I noticed one line isn't similar to the others.
 
-> TODO: Add screenshot or smth
+![Alt text](image-1.png)
 
 It's a string concatenation but it looks like hexadecimal. Let's put that to the chef
 

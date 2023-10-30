@@ -25,7 +25,7 @@ Taking these values and feeding him to CyberChef, I find something interesting. 
 
 CyberChef detects a User-Agent! 
 
-Let's use this User-Agent to send a request to the website using this command (I asked cURL to accept self-signed certificates and to follow redirections).
+Let's use this User-Agent to send a request to the website using this command (I used cURL flags to accept self-signed certificates and to follow redirections).
 
 `curl -i -k -A "Mozilla/5.0 93bed45b-7b70-4097-9279-98a4aef0353e" https://chal.ctf.games:31099/ -L`
 

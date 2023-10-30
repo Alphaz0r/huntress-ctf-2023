@@ -41,7 +41,7 @@ preg_replace($L6CRgr[0],serialize(eval($L6CRgr[2])),$L6CRgr[1]);exit();
 
 
 
-First line is a variable. Reading the php doc about `explode()` I know that it returns an array. In this case it's a 2D array containing a decoded Base64 String on first position and VeryLongString on the second position.
+First line is a variable. Reading the php doc about `explode()` I know that it returns an array. In this case it's an array containing a decoded Base64 String on first position and VeryLongString on the second position.
 
 So basically, the first line is: 
 
@@ -49,9 +49,9 @@ So basically, the first line is:
 $L66Rgr=explode(['<?', 'VeryLongString'])
 ```
 
-Second line is another variable. It is also a 2D array containing 3 Strings. The 2 first ones are also decoded Base64 but the last one is very interesting.
+Second line is another variable. It is also an array containing 3 Strings. The 2 first ones are also decoded Base64 but the last one is very interesting.
 
-Basically the 3rd String is a succession of manipulations on the VeryLongString that is contained in the first variable.
+Basically the 3rd String is a succession of manipulations on the VeryLongString that is contained in the first array.
 
 1. First it applies `str_rot13()` which is a Caesar cipher, you just replace each letter by the one 13 steps after it in the alphabet. (example: a=n)
 2. After that it applies `strrev()` which is just reverses the String (confirmation of the hint found earlier)

@@ -36,9 +36,11 @@ My guess was correct : It just run the dll with starting point DLLMain.
 
 Using GHIDRA, I feed him the dll and find a huge collection of functions etc... I go to DLLMain.
 
+![Alt text](image-4.png)
+
 ## DLLMain
 
-```
+```c
 undefined8 DLLMain(void)
 
 {
@@ -71,7 +73,11 @@ Looking at the function `decrypt_bytes` I see some special lines here
 
 Googling a bit I find out it's a XOR function with `-rr5-rr5-rr5-rr5-rr5-rr5-rr5-rr5-rr5-rr5-rr5-rr5-rr5-rr5-rr5-rr5-r` as key.
 
-The data to be XOR'ed by this function are stored inside `&DAT_103cd840`. Looking at it I can get the hex datas and extract them.
+The data to be XOR'ed by this function are stored inside `&DAT_103cd840`. Looking at it I can get the hex values and extract them.
+
+![Alt text](image-5.png)
+
+
 
 `45 06 06 45 5e 48 5d 1a 4a 1b 01 41 03 15 1b 41 45 07 10 40 5e 17 00 56 42 1c 06 50 43 06 5c 56 42 1f 5d 7d 58 01 19 4c 65 13 11 5e 5e 5d 4a 56 48 11 17 0d 1a 4a 14 51 48 44 43 00 48 14 4a 02 1a 42 1d 47 4b 51 15 4a 40 04 1c 10 40 50 02 00 13 42 02 13 10 56 4c 14 47 0c 1f 42 13 01 1d 4a 46 06 15 47 43 50 48 11 47 00 1d 16 43 51 4e 13 4b 02 48 4b 46 01 19 13 11 02 18 5d 15 5c 5e 06 14 5c 41 17 1c 5c 06 4d 59 00 00 00 00 00 00 00`
 
@@ -104,11 +110,14 @@ libaes::Cipher::new_256
 Looking at the 2 functions here I get these informations :
 
 - ``Base64 decoding error`` is misleading 
-- libaes is just AES encryption
+- libaes is just AES 256 encryption
 - Second function tells me it is AES-CBC exactly
 
 
-For AES-CBC decryption we need a key and a vector. It seems like the 2 Strings here are what I need.
+For AES-CBC decryption we need a key and a vector. It seems like the 2 Strings here are what I need. However these strings looks a bit corrupted, I needed to delete the last characters to align with AES-256 decryption:
+
+- 32 bytes for the key
+- 16 bytes for the vector
 
 Putting all these into CyberChef I managed to get the flag :)
 
