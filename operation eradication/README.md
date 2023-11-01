@@ -33,7 +33,7 @@ Googling a bit gave me the info that this is a configuration file for [rclone to
 
 After installing the tool, modifying URL and put the config file in rclone configuration I managed to connect.
 
-(I dit it as root which is... Not recommended, but I don't care since it's a throwable VM.)
+(I did it as root which is... Not recommended, but I don't care since it's a throwable VM.)
 
 ![Alt text](image.png)
 
