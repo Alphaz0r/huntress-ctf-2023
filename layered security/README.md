@@ -17,3 +17,6 @@ Opening the image with the tool, I've got an hint in the challenge name + the co
 
 
 Flag is located at layer 3 (starting from the bottom).
+
+
+![Alt text](image.png)
