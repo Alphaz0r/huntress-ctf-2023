@@ -16,4 +16,4 @@ Using `file` command on my Kali machine I got the info that the file is a [GIMP]
 Opening the image with the tool, I've got an hint in the challenge name + the context that we have to check the different layers of the image to find something...
 
 
-Flag is located at layer 3.
+Flag is located at layer 3 (starting from the bottom).
